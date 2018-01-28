@@ -1,2 +1,3 @@
 # arrow-kt-examples
-Examples from the docs from arrow-kt.io
+
+Examples from the docs at http://arrow-kt.io/docs/
