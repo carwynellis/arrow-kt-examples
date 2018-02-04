@@ -218,8 +218,6 @@ fun main(args: Array<String>) {
     // For using Either’s syntax on arbitrary data types arrow provides
     // additional syntax which can be imported. This provides left(), right(),
     // contains() and getOrElse() methods.
-    // TODO - getOrHandle referenced in the documentation appears to have been
-    //        removed.
 
     val rightOfNumber = 7.right()
 
@@ -259,6 +257,24 @@ fun main(args: Array<String>) {
 
     println("foldOnLeft returned $foldOnLeft")
 
+    // The getOrHandle() operation allows the transformation of an Either.Left
+    // value to a Either.Right using the value of Left. This can be useful when
+    // a mapping to a single result type is required like fold() but without the
+    // need to handle Either.Right case.
+
+    // As an example we want to map an Either<Int, Throwable> to a proper HTTP
+    // status code:
+
+    val leftException: Either<Throwable, Int> = Either.Left(NumberFormatException())
+    val httpStatusCode = leftException.getOrHandle {
+        when(it) {
+            is NumberFormatException -> 400
+            else -> 500
+        }
+    }
+
+    println("left.getOrHandle returned: $httpStatusCode")
+
     // Arrow contains Either instances for many useful typeclasses that
     // allows you to use and transform right values. Both Option and Try don’t
     // require a type parameter with the following functions, but it is
@@ -289,7 +305,7 @@ fun main(args: Array<String>) {
         val a = Either.Right(1).bind()
         val b = Either.Right(1 + a).bind()
         val c = Either.Right(1 + b).bind()
-        yields(a + b + c)
+        a + b + c
     }
 
     println("Either.monad example returned: $eitherMonad")

@@ -108,7 +108,7 @@ fun main(args: Array<String>) {
         val a = Some(1).bind()
         val b = Some(1 + a).bind()
         val c = Some(1 + b).bind()
-        yields(a + b + c)
+        a + b + c
     }
 
     println("monadWithNoAbsences: $monadWithNoAbsences")
@@ -117,7 +117,7 @@ fun main(args: Array<String>) {
         val x = none<Int>().bind()
         val y = Some(1 + x).bind()
         val z = Some(1 + y).bind()
-        yields(x + y + z)
+        x + y + z
     }
 
     println("monadWithAbsence: $monadWithAbsence")

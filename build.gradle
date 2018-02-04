@@ -15,11 +15,11 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-reflect"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    compile 'io.arrow-kt:arrow-core:0.6.0'
-    compile 'io.arrow-kt:arrow-instances:0.6.0'
-    compile 'io.arrow-kt:arrow-syntax:0.6.0'
-    compile 'io.arrow-kt:arrow-typeclasses:0.6.0'
-    kapt    'io.arrow-kt:arrow-annotations-processor:0.6.0'
+    compile 'io.arrow-kt:arrow-core:0.6.1'
+    compile 'io.arrow-kt:arrow-instances:0.6.1'
+    compile 'io.arrow-kt:arrow-syntax:0.6.1'
+    compile 'io.arrow-kt:arrow-typeclasses:0.6.1'
+    kapt    'io.arrow-kt:arrow-annotations-processor:0.6.1'
     testCompile "org.jetbrains.kotlin:kotlin-test"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit"
     testCompile group: 'junit', name: 'junit', version: '4.12'
