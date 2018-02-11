@@ -1,4 +1,4 @@
-package uk.carwynellis.arrowexamples.datatypes
+package arrow.examples.datatypes
 
 import arrow.data.*
 import arrow.syntax.applicative.tupled

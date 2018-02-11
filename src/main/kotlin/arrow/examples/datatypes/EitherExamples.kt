@@ -1,16 +1,10 @@
-package uk.carwynellis.arrowexamples.datatypes
+package arrow.examples.datatypes
 
 import arrow.core.*
 import arrow.syntax.applicative.tupled
 import arrow.syntax.either.left
 import arrow.syntax.either.right
 import arrow.typeclasses.binding
-
-// Error class for Either with ADT example.
-sealed class Error {
-    object NotANumber : Error()
-    object NoZeroReciprocal : Error()
-}
 
 /**
  * Source http://arrow-kt.io/docs/datatypes/either/
@@ -310,3 +304,10 @@ fun main(args: Array<String>) {
 
     println("Either.monad example returned: $eitherMonad")
 }
+
+// Error class for Either with ADT example.
+sealed class Error {
+    object NotANumber : Error()
+    object NoZeroReciprocal : Error()
+}
+
